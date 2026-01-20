@@ -1,5 +1,13 @@
-//LocalHost Get all contacts  http://localhost:8080/contacts
-//LocalHost Get single contact  http://localhost:8080/contacts/696f03c329ea9120e468417d
-//LocalHost Get single Contact 2 http://localhost:8080/contacts/696f03c329ea9120e468417e 
-//LocalHost Get single Contact 3 http://localhost:8080/contacts/696f03c329ea9120e468417f
+// Local Host: http://localhost:8080
+GET http://localhost:8080/contacts 
+
+GET http://localhost:8080/contacts/696f03c329ea9120e468417d 
+
+GET http://localhost:8080/contacts/696f03c329ea9120e468417e 
+
+GET http://localhost:8080/contacts/696f03c329ea9120e468417f 
+
+
+
+
 
