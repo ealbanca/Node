@@ -62,6 +62,17 @@ const updateContact= async (req, res) =>{
   }
 };
 
+//Funtion to delete a contact by ID
+const deleteContact = async(req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const response = await mmongodb.getDb().db().collection('contacts').remove({_id: userId}, contact); //Uses remove to delete the contact
+  if (response.deletedCount > 0){
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
+  }
+
+};
 
 
 //Exports the functions to be used in other parts of the application
@@ -69,5 +80,6 @@ module.exports = {
   getAllContacts,
   getSingleContact,
   createContact,
-  updateContact
+  updateContact,
+  deleteContact
 };
