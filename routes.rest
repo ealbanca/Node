@@ -1,20 +1,28 @@
 // Local Host: http://localhost:8080
-GET http://localhost:8080/contacts 
 
-GET http://localhost:8080/contacts/696f03c329ea9120e468417d 
+GET http://localhost:8080/contacts
 
+###
+GET http://localhost:8080/contacts/696f03c329ea9120e468417d
+
+###
 GET http://localhost:8080/contacts/696f03c329ea9120e468417e 
 
+###
 GET http://localhost:8080/contacts/696f03c329ea9120e468417f 
 
 //Render.com
 
+###
 GET https://cs341-node.onrender.com/contacts
 
+###
 GET https://cs341-node.onrender.com/contacts/696f03c329ea9120e468417d
 
+###
 GET https://cs341-node.onrender.com/contacts/696f03c329ea9120e468417e
 
+###
 GET https://cs341-node.onrender.com/contacts/696f03c329ea9120e468417f
 
 
