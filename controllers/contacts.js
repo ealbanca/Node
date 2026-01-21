@@ -11,6 +11,7 @@ const getAllContacts = async (req, res) => {
     res.status(200).json(lists);
   });
 };
+
 //Fetches a single contact based on the provided ID in the request parameters
 const getSingleContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
@@ -25,8 +26,48 @@ const getSingleContact = async (req, res) => {
   });
 };
 
+//Function to post a new contact to the database
+const createContact = async (req, res) => {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact); // Uses insertOne to add the new contact
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+  }
+};
+
+//Function to update a contact by ID
+const updateContact= async (req, res) =>{
+  const userId = new ObjectId(req.params.id);
+
+  const contact ={
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mmongodb.getDb().db().collection('contacts').replaceOne({_id: userId}, contact); //Uses replaceOne to update the contact
+  if (response.modifiedCount > 0){
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+  }
+};
+
+
+
 //Exports the functions to be used in other parts of the application
 module.exports = {
   getAllContacts,
   getSingleContact,
+  createContact,
+  updateContact
 };
