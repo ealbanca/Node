@@ -54,7 +54,7 @@ const updateContact= async (req, res) =>{
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-  const response = await mmongodb.getDb().db().collection('contacts').replaceOne({_id: userId}, contact); //Uses replaceOne to update the contact
+  const response = await mongodb.getDb().db().collection('contacts').replaceOne({_id: userId}, contact); //Uses replaceOne to update the contact
   if (response.modifiedCount > 0){
     res.status(204).send();
   } else {
@@ -65,7 +65,7 @@ const updateContact= async (req, res) =>{
 //Funtion to delete a contact by ID
 const deleteContact = async(req, res) => {
   const userId = new ObjectId(req.params.id);
-  const response = await mmongodb.getDb().db().collection('contacts').remove({_id: userId}, contact); //Uses remove to delete the contact
+  const response = await mongodb.getDb().db().collection('contacts').deleteOne({_id: userId}); //Uses deleteOne to delete the contact
   if (response.deletedCount > 0){
     res.status(204).send();
   } else {

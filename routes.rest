@@ -1,22 +1,78 @@
 // Local Host: http://localhost:8080
 
+//Get all contacts
 GET http://localhost:8080/contacts
-###
+
+### get contact by ID
 GET http://localhost:8080/contacts/696f03c329ea9120e468417d
-###
-GET http://localhost:8080/contacts/696f03c329ea9120e468417e 
-###
-GET http://localhost:8080/contacts/696f03c329ea9120e468417f 
+
+### create and post a new contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "NewFirstName",
+    "lastName": "NewLastName",
+    "email": "newemail@example.com",
+    "phone": "0000000",
+    "favoriteColor": "New color",
+    "birthday": "1000-01-01"
+}
+
+### Update a contact by ID
+PUT http://localhost:8080/contacts/69705b63a2c169e00c9eeca6 
+Content-Type: application/json
+
+{
+    "firstName": "UpdatedFirstName",
+    "lastName": "UpdatedLastName",
+    "email": "updatedemail@example.com",
+    "phone": "123-456-7890",
+    "favoriteColor": "Updated color",
+    "birthday": "1990-01-01"
+}
+
+### Delete a contact by ID
+DELETE http://localhost:8080/contacts/69705b63a2c169e00c9eeca6
+
 
 //Render.com
-###
+
+### Get all contacts
 GET https://cs341-node.onrender.com/contacts
-###
+
+### Get contact by ID
 GET https://cs341-node.onrender.com/contacts/696f03c329ea9120e468417d
-###
-GET https://cs341-node.onrender.com/contacts/696f03c329ea9120e468417e
-###
-GET https://cs341-node.onrender.com/contacts/696f03c329ea9120e468417f
+
+### create and post a new contact
+POST https://cs341-node.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "firstName": "NewFirstName",
+    "lastName": "NewLastName",
+    "email": "newemail@example.com",
+    "phone": "0000000",
+    "favoriteColor": "New color",
+    "birthday": "1000-01-01"
+}
+
+### Update a contact by ID
+PUT https://cs341-node.onrender.com/contacts/6970587d4c4006981b7bfddc 
+Content-Type: application/json
+
+{
+    "firstName": "UpdatedFirstName",
+    "lastName": "UpdatedLastName",
+    "email": "updatedemail@example.com",
+    "phone": "123-456-7890",
+    "favoriteColor": "Updated color",
+    "birthday": "1990-01-01"
+}
+
+### Delete a contact by ID
+DELETE https://cs341-node.onrender.com/contacts/6970587d4c4006981b7bfddc
+
 
 
 
