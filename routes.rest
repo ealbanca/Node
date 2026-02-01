@@ -58,7 +58,7 @@ Content-Type: application/json
 }
 
 ### Update a contact by ID
-PUT https://cs341-node.onrender.com/contacts/6970587d4c4006981b7bfddc 
+PUT https://cs341-node.onrender.com/contacts/697065d07b08d5a624e8ec69 
 Content-Type: application/json
 
 {
@@ -71,7 +71,7 @@ Content-Type: application/json
 }
 
 ### Delete a contact by ID
-DELETE https://cs341-node.onrender.com/contacts/6970587d4c4006981b7bfddc
+DELETE https://cs341-node.onrender.com/contacts/697065d07b08d5a624e8ec69
 
 
 
