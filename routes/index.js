@@ -7,6 +7,8 @@ router.get('/', (req, res) => {
 	res.send('Welcome to the Contacts API!');
 });
 
+router.use('/', require('./swagger')); // Swagger documentation route
 router.use('/contacts', require('./contacts'));
+
 
 module.exports = router;
