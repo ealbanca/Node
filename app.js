@@ -2,11 +2,16 @@ const express = require('express'); // express web server
 const BodyParser = require('body-parser'); // parse JSON request body
 const mongodb = require('./db/connect');
 
+// Got this code from https://www.npmjs.com/package/swagger-ui-express
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 const port = process.env.PORT || 8080;
 const app = express();
 
 
 // parse application/json
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)) // Swagger UI route, got it from https://www.npmjs.com/package/swagger-ui-express
 app.use(BodyParser.json())
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
